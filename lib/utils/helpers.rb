@@ -7,7 +7,6 @@ module Helpers
       gen_array << 1
     end
     output = gen_array.join.to_s
-    print output
     # convert array of numbers to string
     # return string
   end
