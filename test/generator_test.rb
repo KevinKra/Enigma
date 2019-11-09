@@ -4,7 +4,7 @@ require "minitest/pride"
 require 'mocha/minitest'
 require_relative "../lib/Generator.rb"
 
-class EnigmaTest < Minitest::Test
+class GeneratorTest < Minitest::Test
   def setup
     @generator = Generator.new
   end
