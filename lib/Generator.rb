@@ -1,11 +1,13 @@
 class Generator
   def self.gen_key(key)
+    # generate a an array of consecutive elements
     key.chars.each_cons(2).reduce([]) do |accum, block| 
       accum << block
     end.map { |block| block.join.to_i }
   end
 
   def self.gen_date_offset(date)
+    # generate an array from the date input
     date_squared = (date.to_i) ** 2
     date_squared.to_s[-4..-1].chars.map { |elem| elem.to_i }
   end

@@ -19,7 +19,7 @@ class GeneratorTest < Minitest::Test
     assert_equal [12, 23, 34, 45], Generator.gen_key(@key)
   end
 
-  def test_it_generates_keys
+  def test_it_generates_offsets
     assert_equal [5, 9, 6, 1], Generator.gen_date_offset(@date)
   end
 
