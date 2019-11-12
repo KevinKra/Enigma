@@ -7,19 +7,8 @@ require_relative "../lib/Enigma.rb"
 class EnigmaTest < Minitest::Test
   def setup
     @enigma =  Enigma.new
-    @encrypted_message = 
-    {
-      encryption: "keder ohulw",
-      key: "02715",
-      date: "040895"
-    }
-
-    @unencrypted_message = 
-    { 
-      decryption: "hello world",
-      key: "02715",
-      date: "040895"
-    }
+    @decrytped = {:encryption=>"hello world", :key=>"12345", :date=>"121219"}
+    @encrypted = {:encryption=>"yvbbeqmehbu", :key=>"12345", :date=>"121219"}
   end
 
   def test_it_exists
@@ -37,12 +26,10 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_encrypt
-    skip
-    assert_equal @encrypted_message, @enigma.encrypt("hello world")
+    assert_equal @encrypted, @enigma.encrypt("hello world", "12345", "121219")
   end
 
   def test_decrypt
-    skip
-    assert_equal @unencrypted_message, @enigma.decrypt("keder ohulw", "02715", "040895")
+    assert_equal @decrytped, @enigma.decrypt("yvbbeqmehbu", "12345", "121219")
   end
 end
