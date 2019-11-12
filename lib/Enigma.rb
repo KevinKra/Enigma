@@ -23,7 +23,8 @@ class Enigma
   public
   def encrypt(message, key = nil, date = nil)
     # encrypt the message
-    # Each shift will be the sum of two other shifts known as the Keys and the Offsets
+    date = todays_date if date == nil
+    key = gen_key if key == nil
     {
       encryption: @encrypt.handle_encryption(true, message, key, date),
       key: key,
@@ -33,7 +34,8 @@ class Enigma
 
   def decrypt(message, key, date = nil)
     # decrypt the message
-    # ex: enigma.decrypt(encrypted[:encryption], "02715")
+    date = todays_date if date == nil
+    # is it smart to handle the date like this for decryption?
     {
       encryption: @encrypt.handle_encryption(false, message, key, date),
       key: key,
